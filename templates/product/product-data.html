@@ -1,0 +1,64 @@
+
+{% if all_product %}
+	<table id="ProductListDataTable" class="display" style="width:100%" border="1">
+	    <thead>
+	        <tr>
+	            <th>ProductName</th>
+	            <th>Product Code</th>
+	            <th>Product Price</th>
+	            <th>Product Category</th>
+	            <th>Manufacture Date</th>
+	            <th>Expiry Date</th>
+	            <th>Product Status</th>
+	            <th>Edit</th>
+	            <th>Delete</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	    	{% for prod in all_product %}
+			    <tr>
+			        <td>
+			        	{{prod.name}}
+			        </td>
+			        <td>
+			        	{{prod.product_code}}
+			        </td>
+			        <td>
+			        	{{prod.product_price}}
+			        </td>
+			        <td>
+			        	{{prod.product_category}}
+			        </td>
+			        <td>
+			        	{{prod.manufacture_date}}
+			        </td>
+			        <td>
+			        	{{prod.expiry_date}}
+			        </td>
+			        <td>
+			        	{{prod.product_status | capfirst}}
+			        </td>
+			        <td class="text-center">
+			        	<a href="#" class="edit-product" class="edit-product-btn" id="{{prod.id}}">
+			        		<i class="fa fa-pencil"/>
+			        	</a>
+			        </td>
+			        <td class="text-center">
+			        	<a href="#" class="delete-product" class="delete-product-btm" id="{{prod.id}}">
+			        		<i class="fa fa-trash"/>
+			        	</a>
+			        </td>
+			    </tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% else %}
+	No product found
+{% endif %}
+
+<script type="text/javascript">
+	
+	$("body .edit-product-btn").click(function(event){
+		debugger
+	})
+</script>

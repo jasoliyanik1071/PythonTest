@@ -1,0 +1,63 @@
+<!-- {% load static %}
+
+<nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+    <div class="container">
+        <div class="navbar-translate">
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a href="/dashboard">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="{% url 'product_management:product-list' %}">
+                        Product
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+{% load static %}
+
+<div class="main main-raised">
+    <div class="card card-nav-tabs center " id="userForm">
+        <div class="card-header card-header-primary">
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <ul class="nav nav-tabs" data-tabs="tabs" style="justify-content:center;">
+                        {% if request.user.is_authenticated %}
+                            <li class="nav-item">
+                                <a href="/dashboard">
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'product_management:product-list' %}">
+                                    Product
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                              <a href="{% url 'login' %}">Log In</a>
+
+                                <!-- <a href="accounts/login/">
+                                    Login
+                                </a> -->
+                            </li>
+                            <li class="nav-item">
+                                <a href="/user/registration">
+                                    Register
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

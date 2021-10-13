@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block pagetitle %}
+    <title>Product Details</title>
+{% endblock %}
+
+
+{% block content %} 
+
+<script type="text/javascript" src="{% static 'js/core/jquery-3.5.1.js' %}"></script>
+
+<div class="main main-raised" style="margin-top: 50px;">
+
+	<div class="row">
+		<div class="col-md-2 col-sm-2">
+			{% include "product/category-data.html" %}
+			<!-- <li class="main-menu">
+	            <a href="{% url 'product_management:product-list' %}"> Category
+	                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+	            </a>
+	        </li> -->
+		</div>
+		<div class="col-md-9 col-sm-9" id="product-details-data">
+			{% include "product/product-data.html" %}
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$("body .edit-product-btn").on("click", function(event){
+		event.preventDefault();
+		debugger
+	});
+	
+	$("body .edit-product-btn").click(function(event){
+		debugger
+	})
+</script>
+
+
+
+{% endblock %}

@@ -1,0 +1,5 @@
+<select id="product-category">
+    {% for categ in all_category %}
+        <option value="{{ categ.id }}" class="{{ categ.name }}">{{ categ.name }}</option>
+    {% endfor %}
+</select>
